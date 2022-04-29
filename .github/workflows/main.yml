@@ -26,6 +26,6 @@ jobs:
       with:
         server: ftp.cluster028.hosting.ovh.net
         username: metyfrraju
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
         server-dir: spotit/
         local-dir: ./dist/
