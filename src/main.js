@@ -24,6 +24,7 @@ Vue.component('l-marker', LMarker);
 Vue.config.productionTip = false
 
 new Vue({
+
   router,
   vuetify,
   render: function (h) { return h(App) }
