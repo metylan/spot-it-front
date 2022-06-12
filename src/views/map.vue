@@ -6,8 +6,12 @@
             x-large
             dark
             width="150px"
+            height="150px"
         >
-          Nature
+        <v-icon size="100">
+          mdi-forest
+        </v-icon>
+          <p>Nature</p> 
         </v-btn>
       </div>
       <div class="my-2">
@@ -15,11 +19,12 @@
             x-large
             dark
             width="150px"
+            height="150px"
         >
-        <v-icon>
+        <v-icon size="100">
           mdi-city-variant-outline
         </v-icon>
-          Urbain
+          <p>Urbain</p> 
         </v-btn>
       </div>
       <div class="my-2">
@@ -27,8 +32,12 @@
             x-large
             dark
             width="150px"
+            height="150px"
         >
-          Street art
+        <v-icon size="100">
+          mdi-spray
+        </v-icon>
+          <p>Street art</p> 
         </v-btn>
       </div>
       <div class="my-2">
@@ -36,8 +45,12 @@
             x-large
             dark
             width="150px"
+            height="150px"
         >
-          Lac
+        <v-icon size="100">
+          mdi-waves
+        </v-icon>
+          <p>Lac</p> 
         </v-btn>
       </div>
       <div class="my-2">
@@ -45,8 +58,16 @@
             x-large
             dark
             width="150px"
+            height="150px"
         >
-          Montagne
+        <v-icon
+          size="100"
+        >
+          mdi-image-filter-hdr
+        </v-icon>
+
+        <p>Montagne</p>
+          
         </v-btn>
       </div>
     </div>
@@ -84,7 +105,6 @@ export default {
           'Spot-it',
       zoom: 15,
       center: [45.2, 5.7],
-      markerLatLng: [45.2, 5.7],
       markers: [],
       markerOptions: {opacity: 0, width:"1px", height:"1px"},
     };
@@ -101,5 +121,8 @@ export default {
 <style>
 .leaflet-control-attribution{
   display: none !important;
+}
+.v-btn__content{
+  display: block;
 }
 </style>

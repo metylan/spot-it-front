@@ -27,7 +27,7 @@
               x-large
               dark
               width="150px"
-              @click="$vuetify.goTo('#element-one', { offset: 90 })"
+              @click="$vuetify.goTo('#element-one')"
           >
             Decouvrir
           </v-btn>
@@ -44,8 +44,8 @@
           <h2>Nos services</h2>
         </div>
       </v-card>
-    <v-card class="d-flex align-center justify-space-around no-border">
-        <v-card width="400px">
+    <v-card class="d-flex align-center justify-space-around no-border f-wrap">
+        <v-card width="400px" style="margin:50px;">
           <v-img
               lazy-src="https://picsum.photos/id/11/10/6"
               width="100%"
@@ -69,7 +69,7 @@
             </v-btn>
           </div>
         </v-card>
-        <v-card width="400px">
+        <v-card width="400px" style="margin:50px;">
           <v-img
               lazy-src="https://picsum.photos/id/11/10/6"
               width="100%"
@@ -108,9 +108,16 @@
             class="text-center"
             cols="4"
         >
-          <h2 class="text-h4 font-weight-thin mb-4 hover" >
-            Vos lieux préférés de la semaine
-          </h2>
+          <v-btn
+              x-large
+              dark
+              width="20px"
+              height="50px"
+          >
+            <v-icon size="75px">
+              mdi-menu-left
+            </v-icon>
+          </v-btn>
         </v-col>
         <v-col
             class="text-center"
@@ -124,9 +131,16 @@
             class="text-center"
             cols="4"
         >
-          <h2 class="text-h4 font-weight-thin mb-4 hover" >
-            Vos lieux préférés de la semaine
-          </h2>
+          <v-btn
+              x-large
+              dark
+              width="20px"
+              height="50px"
+          >
+            <v-icon size="75px">
+              mdi-menu-right
+            </v-icon>
+          </v-btn>
         </v-col>
       </v-row>
     </v-parallax>
@@ -138,8 +152,8 @@
         <h2>Les derniers sujets de conversation</h2>
       </div>
     </v-card>
-    <v-card class="d-flex align-center justify-space-around no-border">
-      <v-card width="400px">
+    <v-card class="d-flex align-center justify-space-around no-border f-wrap">
+      <v-card width="400px"  style="margin:50px;">
         <v-img
             lazy-src="https://picsum.photos/id/11/10/6"
             width="100%"
@@ -158,7 +172,7 @@
           </div>
         </div>
       </v-card>
-      <v-card width="400px">
+      <v-card width="400px"  style="margin:50px;">
         <v-img
             lazy-src="https://picsum.photos/id/11/10/6"
             width="100%"
@@ -222,5 +236,7 @@ export default {
   background-color: rgba(0,0,0,0.5);
   margin: -16px;
 }
-
+.f-wrap{
+  flex-wrap: wrap;
+}
 </style>
