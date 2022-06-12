@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import vuetify from './plugins/vuetify'
 import axios from "axios";
+import VueScrollTo from 'vue-scrollto';
 
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = "http://liaxum.fr/spotit";

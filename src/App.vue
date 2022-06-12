@@ -26,9 +26,9 @@
 
           <v-btn class="ma-5" text to="/">Accueil</v-btn>
           <v-btn class="ma-5" text to="/about">Carte</v-btn>
-          <v-btn class="ma-5" text to="/about">Blog</v-btn>
-          <v-btn class="ma-5" text to="/about">Vip</v-btn>
-          <v-btn class="ma-5" text to="/compte">Contact</v-btn>
+          <v-btn class="ma-5" text to="/blog">Blog</v-btn>
+          <v-btn class="ma-5" text to="/vip">Vip</v-btn>
+          <v-btn class="ma-5" text to="/contact">Contact</v-btn>
 
 
           <v-spacer></v-spacer>

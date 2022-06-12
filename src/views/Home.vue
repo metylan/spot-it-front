@@ -27,6 +27,7 @@
               x-large
               dark
               width="150px"
+              @click="$vuetify.goTo('#element-one', { offset: 90 })"
           >
             Decouvrir
           </v-btn>
@@ -37,6 +38,7 @@
       <v-card
           class="d-flex align-center justify-center pa-4 mx-auto no-border"
           outlined
+          id="element-one"
       >
         <div class="title-serv">
           <h2>Nos services</h2>
@@ -61,6 +63,7 @@
                 x-large
                 dark
                 width="150px"
+                to="/about"
             >
               Carte
             </v-btn>
@@ -103,9 +106,25 @@
       >
         <v-col
             class="text-center"
-            cols="12"
+            cols="4"
         >
-          <h2 class="text-h4 font-weight-thin mb-4">
+          <h2 class="text-h4 font-weight-thin mb-4 hover" >
+            Vos lieux préférés de la semaine
+          </h2>
+        </v-col>
+        <v-col
+            class="text-center"
+            cols="4"
+        >
+          <h2 class="text-h4 font-weight-thin mb-4" >
+            Vos lieux préférés de la semaine
+          </h2>
+        </v-col>
+        <v-col
+            class="text-center"
+            cols="4"
+        >
+          <h2 class="text-h4 font-weight-thin mb-4 hover" >
             Vos lieux préférés de la semaine
           </h2>
         </v-col>
@@ -170,8 +189,11 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
-  }
+  },
+
 }
+
+
 </script>
 <style>
 
@@ -200,4 +222,5 @@ export default {
   background-color: rgba(0,0,0,0.5);
   margin: -16px;
 }
+
 </style>

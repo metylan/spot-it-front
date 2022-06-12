@@ -7,7 +7,7 @@
             dark
             width="150px"
         >
-          Extra
+          Nature
         </v-btn>
       </div>
       <div class="my-2">
@@ -16,7 +16,10 @@
             dark
             width="150px"
         >
-          Extra
+        <v-icon>
+          mdi-city-variant-outline
+        </v-icon>
+          Urbain
         </v-btn>
       </div>
       <div class="my-2">
@@ -25,7 +28,7 @@
             dark
             width="150px"
         >
-          Extra
+          Street art
         </v-btn>
       </div>
       <div class="my-2">
@@ -34,7 +37,7 @@
             dark
             width="150px"
         >
-          Extra
+          Lac
         </v-btn>
       </div>
       <div class="my-2">
@@ -43,22 +46,24 @@
             dark
             width="150px"
         >
-          Extra
+          Montagne
         </v-btn>
       </div>
     </div>
-    <l-map style="height: 80vh; width: 80vw;  z-index: 1; margin: auto;" :zoom="zoom" :center="center" @click="addMarker">
+    <l-map style="height: 80vh; width: 80vw;  z-index: 1; margin: auto;" :zoom="zoom" :center="center" @click="newMarker">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-marker :lat-lng="markerLatLng" >
-        <l-icon :icon-size= [1,1] icon-url="icon.png"> </l-icon>
-      </l-marker>
+            <div v-for="marker in markers" :key="marker.id">
+        <l-marker :lat-lng="marker" >
+        </l-marker>
+      </div>
     </l-map>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
 import {LMap, LTileLayer, LMarker} from 'vue2-leaflet';
-import {getMarkers} from "../api/markers";
+import {getMarkers,addMarker} from "../api/markers";
 import {getUsers} from "../api/users";
 
 
@@ -85,11 +90,9 @@ export default {
     };
   },
   methods: {
-    addMarker(e) {
-      console.log(this.markers);
-      this.markerLatLng = [e.latlng.lat,e.latlng.lng],
-      this.markers.push(e.latlng);
-      console.log(e.latlng);
+    newMarker(e) {
+      this.markers.push([e.latlng.lat,e.latlng.lng]);
+      addMarker(e.latlng.lat,e.latlng.lng,'test','testcom',1)
     }
   }
 }
