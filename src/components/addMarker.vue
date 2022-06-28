@@ -36,15 +36,10 @@
 </template>
 
 <script>
-import { getMarkers, addMarker } from "../api/markers";
-import { getUsers } from "../api/users";
+import { addMarker } from "../api/markers";
 import { isConnect } from "../api/auth";
 
 export default {
-    async created() {
-        this.markers = await getMarkers();
-        this.users = await getUsers();
-    },
     name: "addMarker",
     props: {
         dialog: { required: true, type: Boolean },

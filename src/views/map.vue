@@ -54,17 +54,14 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
-import { getMarkers, addMarker } from "../api/markers";
-import { getUsers } from "../api/users";
+import { getMarkers } from "../api/markers";
 import addMarkerVue from '../components/addMarker.vue';
 
 
 export default {
   async beforeCreate() {
     this.markers = await getMarkers();
-    this.users = await getUsers();
   },
   components: {
     LMap,

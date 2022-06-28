@@ -95,7 +95,6 @@ export default {
                 this.connexiondial = false
             } catch (error) {
                 this.errorlogin = true
-                console.log(error)
             }
         }    
     }
