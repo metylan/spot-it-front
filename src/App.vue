@@ -21,7 +21,7 @@
             ></v-img>
           </template>
 
-          <v-spacer></v-spacer>
+          <v-spacer/>
 
 
           <v-btn class="ma-5" text to="/">Accueil</v-btn>
@@ -31,7 +31,7 @@
           <v-btn class="ma-5" text to="/contact">Contact</v-btn>
 
 
-          <v-spacer></v-spacer>
+          <v-spacer/>
           <v-btn
             icon
             fab
@@ -95,7 +95,7 @@
           </v-card>
         </v-footer>
       </v-card>
-      <dialconnexion :dialog.sinc="dialog" v-if="dialog"/>
+      <dialconnexion :dialog.sync="dialog" v-if="dialog"/>
     </v-app>
   </div>
 </template>

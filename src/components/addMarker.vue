@@ -38,6 +38,7 @@
 <script>
 import { getMarkers, addMarker } from "../api/markers";
 import { getUsers } from "../api/users";
+import { isConnect } from "../api/auth";
 
 export default {
     async created() {
@@ -72,10 +73,12 @@ export default {
         cancel() {
             this.dialogAddMarker = false;
         },
-        async submit() {   
-            await addMarker(this.position[0], this.position[1], this.form.name, this.form.message, 1);
-            this.$emit("marker",true)
-            this.cancel();
+        async submit() {
+            if (isConnect) {
+                await addMarker(this.position[0], this.position[1], this.form.name, this.form.message, 1);
+                this.$emit("marker", true)
+                this.cancel();
+            }
         }
     }
 }
