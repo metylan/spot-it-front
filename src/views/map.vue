@@ -46,11 +46,8 @@
     </div>
     <l-map style="height: 80vh; width: 80vw;  z-index: 1; margin: auto;" :zoom="zoom" :center="center"
       @click="newMarker">
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <div v-for="marker in markers" :key="marker.id">
-        <l-marker :lat-lng="marker">
-        </l-marker>
-      </div>
+      <l-tile-layer :url="url" :attribution="attribution"/>
+        <l-marker v-for="marker in markers" :key="marker.id" :lat-lng="marker" />
     </l-map>
     <add-marker-vue v-if="dialog" :dialog.sync="dialog" :position="position" @marker="refresh()" />
   </div>
@@ -65,8 +62,8 @@ import addMarkerVue from '../components/addMarker.vue';
 
 
 export default {
-  async created() {
-    this.refresh();
+  async beforeCreate() {
+    this.markers = await getMarkers();
     this.users = await getUsers();
   },
   components: {
