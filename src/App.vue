@@ -32,70 +32,17 @@
 
 
           <v-spacer></v-spacer>
-
-          <v-btn icon class="ma-5">
-            <v-row justify="center">
-              <v-dialog
-                  v-model="dialog"
-                  max-width="600px"
-              >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-icon
-                      class="ma-5"
-                      text
-                      dark
-                      v-bind="attrs"
-                      v-on="on"
-                      x-large
-                  >
-                    mdi-account
-                  </v-icon>
-                </template>
-                <v-card>
-                  <v-card-title>
-                    <span class="text-h5">Connexion</span>
-                  </v-card-title>
-                  <v-card-text>
-                    <v-container>
-                      <v-row>
-                        <v-col cols="12">
-                          <v-text-field
-                              label="Email*"
-                              required
-                          ></v-text-field>
-                        </v-col>
-                        <v-col cols="12">
-                          <v-text-field
-                              label="Password*"
-                              type="password"
-                              required
-                          ></v-text-field>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                    <small>indicates required field</small>
-                  </v-card-text>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="dialog = false"
-                    >
-                      Close
-                    </v-btn>
-                    <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="dialog = false"
-                    >
-                      Save
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-row>
+          <v-btn
+            icon
+            fab
+            x-large
+            @click="dialog = true"
+          >
+            <v-icon>
+              mdi-account
+            </v-icon>
           </v-btn>
+          
         </v-app-bar>
 
           <v-card-text  >
@@ -148,14 +95,18 @@
           </v-card>
         </v-footer>
       </v-card>
+      <dialconnexion :dialog.sinc="dialog" v-if="dialog"/>
     </v-app>
   </div>
 </template>
 
 <script>
+import dialconnexion from "./components/dialconnexion.vue";
+document.title = "Spot-It";
 export default {
   name: 'App',
   data: () => ({
+    dialog: false,
     icons: [
       'mdi-facebook',
       'mdi-twitter',
@@ -171,6 +122,9 @@ export default {
       'Contact Us',
     ],
   }),
+  components:{
+    dialconnexion,
+  }
 };
 </script>
 <style>

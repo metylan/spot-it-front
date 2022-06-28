@@ -2,7 +2,7 @@
   <div>
   <v-parallax
       dark
-      src="../assets/james-donovan-kFHz9Xh3PPU-unsplash.jpg"
+      src="../assets/v2osk-1Z2niiBPg5A-unsplash.jpg"
       >
       <v-row
         align="center"

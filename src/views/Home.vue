@@ -47,9 +47,9 @@
     <v-card class="d-flex align-center justify-space-around no-border f-wrap">
         <v-card width="400px" style="margin:50px;">
           <v-img
-              lazy-src="https://picsum.photos/id/11/10/6"
               width="100%"
-              src="https://picsum.photos/id/11/500/300"
+              height="250px"
+              src="../assets/annie-spratt-kZO9xqmO_TA-unsplash.jpg"
           ></v-img>
           <div class="title-serv">
             <h3>Carte interactive</h3>
@@ -71,9 +71,9 @@
         </v-card>
         <v-card width="400px" style="margin:50px;">
           <v-img
-              lazy-src="https://picsum.photos/id/11/10/6"
               width="100%"
-              src="https://picsum.photos/id/11/500/300"
+              height="250px"
+              src="../assets/sincerely-media-ylveRpZ8L1s-unsplash.jpg"
           ></v-img>
           <div class="title-serv">
             <h3>Blog</h3>
@@ -197,12 +197,11 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+
   },
 
 }
